@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*HW4 you can use flex to align indicators*/
+        #indicators {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="carousel"></div>
+
+    <div id="indicators">
+
+    </div>
+
+    <script>
+        let activeN = 2
+        const renderIndicators = () => {
+            let html = `<button>◀</button>`
+            //HW1 reverse the image order
+            //answer let n = 3; n >= 1; n--)
+
+            //HW2 rewrite for to while
+            // let n = 1;
+            // while (n <= 3) {
+            //     let color = "black";
+
+            //     if (n === activeN) {
+            //         color = "orange";
+            //     }
+
+            //     html += `<img src="${n}-150x150.jpeg" 
+            //             style="
+            //             border: 5px solid ${color};
+            //             margin: 5px"
+            //             />`;
+
+            //     n++;
+            // }
+            for (let n = 1; n <= 3; n++) {
+
+            //HW3 try to replace to ?:
+            // let color = n === activeN ? "orange" : "black";
+
+                let color = "black"
+
+                if(n == activeN) {
+                    color = "orange"
+                }
+                html += `<img src="${n}-150x150.jpeg" 
+                          style="
+                          border: 5px solid ${color};
+                          margin: 5px"
+                          />`
+            }
+            //HW5 use symbols instead of L R ◀ ▶
+            html += `<button onclick="nextSlide()">▶</button>` 
+            indicators.innerHTML = html
+        }
+        const nextSlide = () => {
+            activeN++
+            alert()
+        }
+    </script>
+</body>
+</html>
